@@ -1,3 +1,4 @@
 class Character:
-	positionTrans = 0
-	transformations = [0] * 4
+	def __init__(self):
+		self.positionTrans = 0
+		self.transformations = [] * 4

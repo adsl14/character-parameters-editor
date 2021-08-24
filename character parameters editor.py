@@ -27,7 +27,13 @@ sizeTrans = 33
 
 # panelPortraistlist
 miniPortraitsImage = []
-characterList = [0] * 100
+characterList = []
+charaSelected = 0
+ # Store what character has original transform version
+charactersWithTrans = [0, 5, 8, 17, 22, 24, 27, 29, 31, 34, 40, 48, 58, 63, 67, 79, 82, 85, 88]
+# Store what transformations has the character originally
+charactersWithTransIndex = [[1,2,3], [6, 7], [9, 10], [18, 19, 20], [23], [25, 26], [28], [30], [32,33], 
+[35], [41], [49, 50, 51, 52], [59, 60, 61], [64, 65], [68, 69], [80], [83], [86], [89]]
 
 def del_rw(name_method, path, error):
     os.chmod(path, stat.S_IWRITE)
@@ -60,7 +66,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             indexChara = miniPortraitsImage[i].objectName().split("_")[1]
             miniPortraitsImage[i].setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + indexChara + ".bmp")))
             miniPortraitsImage[i].setStyleSheet("QLabel {border : 3px solid grey;}")
-            miniPortraitsImage[i].mousePressEvent = functools.partial(self.action_change_character, index=int(indexChara))
+            miniPortraitsImage[i].mousePressEvent = functools.partial(self.action_change_character, index=int(indexChara), modifySlotTransform=True)
             miniPortraitsImage[i].setDisabled(True)
 
         for i in range(62, len(miniPortraitsImage)):
@@ -75,13 +81,67 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.transPanel.setPixmap(QPixmap(os.path.join(path_fourSlot_images, "pl_transform.png")))
         self.transPanel.setVisible(False)
 
-    def action_change_character(self, event, index=None):
-        self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_0" + str(index).zfill(2) + ".png")))
+    def action_change_character(self, event, index=None, modifySlotTransform=False):
+
+        global charaSelected
+
+        # Change only the char selected is other
+        if charaSelected != index:
+
+            # Load the portrait
+            self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_0" + str(index).zfill(2) + ".png")))
+
+            # Load the transformations
+            transformations = characterList[index].transformations
+            self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
+            self.transSlotPanel1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
+            self.transSlotPanel2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
+            self.transSlotPanel3.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[3]).zfill(2) + ".png")))
+
+            # Modify the slots of the transformations in the main panel
+            if modifySlotTransform:
+
+                # Disable all the transformations slot if it has been activated
+                if self.label_trans_0.isVisible():
+                    self.label_trans_0.setVisible(False)
+                    self.label_trans_1.setVisible(False)
+                    self.label_trans_2.setVisible(False)
+                    self.label_trans_3.setVisible(False)
+                    self.label_trans_4.setVisible(False)
+
+                if index in charactersWithTrans:
+                    transformations = charactersWithTransIndex[charactersWithTrans.index(index)]
+                    numTransformations = len(transformations)
+                    if numTransformations > 0:
+                        self.label_trans_0.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[0]).zfill(2) + ".bmp")))
+                        self.label_trans_0.mousePressEvent = functools.partial(self.action_change_character, index=transformations[0], modifySlotTransform=False)
+                        self.label_trans_0.setVisible(True)
+                        if numTransformations > 1:
+                            self.label_trans_1.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[1]).zfill(2) + ".bmp")))
+                            self.label_trans_1.mousePressEvent = functools.partial(self.action_change_character, index=transformations[1], modifySlotTransform=False)
+                            self.label_trans_1.setVisible(True)
+                            if numTransformations > 2:
+                                self.label_trans_2.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[2]).zfill(2) + ".bmp")))
+                                self.label_trans_2.mousePressEvent = functools.partial(self.action_change_character, index=transformations[2], modifySlotTransform=False)
+                                self.label_trans_2.setVisible(True)
+                                if numTransformations > 3:
+                                    self.label_trans_3.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[3]).zfill(2) + ".bmp")))
+                                    self.label_trans_3.mousePressEvent = functools.partial(self.action_change_character, index=transformations[3], modifySlotTransform=False)
+                                    self.label_trans_3.setVisible(True)
+                                if numTransformations > 4:
+                                    self.label_trans_4.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[4]).zfill(2) + ".bmp")))
+                                    self.label_trans_4.mousePressEvent = functools.partial(self.action_change_character, index=transformations[4], modifySlotTransform=False)
+                                    self.label_trans_4.setVisible(True)
+
+
+            # Store the actual index selected of the char
+            charaSelected = index
+
 
 
     def action_open_logic(self):
 
-        global temp_folder, miniPortraitsImage
+        global temp_folder, miniPortraitsImage, characterList
 
 		# Open pak file
         pak_file_path_original = \
@@ -128,15 +188,15 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 pak_file.seek(character.positionTrans)
 
                 # Transformation 1
-                character.transformations[0] = int.from_bytes(pak_file.read(1), byteorder='little')
+                character.transformations.append(int.from_bytes(pak_file.read(1), byteorder='little'))
                  # Transformation 2
-                character.transformations[1] = int.from_bytes(pak_file.read(1), byteorder='little')
+                character.transformations.append(int.from_bytes(pak_file.read(1), byteorder='little'))
                  # Transformation 3
-                character.transformations[2] = int.from_bytes(pak_file.read(1), byteorder='little')
+                character.transformations.append(int.from_bytes(pak_file.read(1), byteorder='little'))
                  # Transformation 4
-                character.transformations[3] = int.from_bytes(pak_file.read(1), byteorder='little')
+                character.transformations.append(int.from_bytes(pak_file.read(1), byteorder='little'))
 
-                characterList[i] = character
+                characterList.append(character)
 
         # Enable the characters portraits
         for i in range(0,62):
@@ -145,11 +205,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Show the large portrait
         self.portrait.setVisible(True)
 
-        # Show the transform panel
+        # Show the transformations in the main panel
         transformations = characterList[0].transformations
-        self.trans0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
-        self.trans1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
-        self.trans2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
+        self.label_trans_0.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[0]).zfill(2) + ".bmp")))
+        self.label_trans_0.mousePressEvent = functools.partial(self.action_change_character, index=transformations[0], modifySlotTransform=False)
+        self.label_trans_1.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[1]).zfill(2) + ".bmp")))
+        self.label_trans_1.mousePressEvent = functools.partial(self.action_change_character, index=transformations[1], modifySlotTransform=False)
+        self.label_trans_2.setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(transformations[2]).zfill(2) + ".bmp")))
+        self.label_trans_2.mousePressEvent = functools.partial(self.action_change_character, index=transformations[2], modifySlotTransform=False)
+        self.label_trans_0.setVisible(True)
+        self.label_trans_1.setVisible(True)
+        self.label_trans_2.setVisible(True)
+
+        # Show the transform panel
+        self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
+        self.transSlotPanel1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
+        self.transSlotPanel2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
         self.transPanel.setVisible(True)
 
 

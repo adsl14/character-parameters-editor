@@ -1380,7 +1380,7 @@
           <bool>false</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="trans0">
+        <widget class="QLabel" name="transSlotPanel0">
          <property name="geometry">
           <rect>
            <x>34</x>
@@ -1399,7 +1399,7 @@
           <bool>false</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="trans1">
+        <widget class="QLabel" name="transSlotPanel1">
          <property name="geometry">
           <rect>
            <x>66</x>
@@ -1418,7 +1418,7 @@
           <bool>false</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="trans2">
+        <widget class="QLabel" name="transSlotPanel2">
          <property name="geometry">
           <rect>
            <x>100</x>
@@ -1437,7 +1437,7 @@
           <bool>false</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="trans3">
+        <widget class="QLabel" name="transSlotPanel3">
          <property name="geometry">
           <rect>
            <x>66</x>
@@ -1468,7 +1468,7 @@
      <x>0</x>
      <y>0</y>
      <width>799</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
