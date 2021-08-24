@@ -15,7 +15,9 @@ dbrb_compressor_path = os.path.join("lib", "resources", "dbrb_compressor.exe")
 
 # path images
 path_little_images = os.path.join("lib","images","little")
+path_little2_images = os.path.join("lib","images","little2")
 path_large_images = os.path.join("lib","images","large")
+path_fourSlot_images = os.path.join("lib","images","fourSlot")
 
 # base position transformations
 basePosTrans = 66723
@@ -65,8 +67,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         	miniPortraitsImage[i].setStyleSheet("QLabel {border : 3px solid grey;}")
         	miniPortraitsImage[i].setVisible(False)
 
-        # Set the the main image invisible
-        self.portrait.setVisible(True)
+        # Set the the main image
+        self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_000.png")))
+        self.portrait.setVisible(False)
+
+        # Set the transform panel invisible
+        self.transPanel.setPixmap(QPixmap(os.path.join(path_fourSlot_images, "pl_transform.png")))
+        self.transPanel.setVisible(False)
 
     def action_change_character(self, event, index=None):
         self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_0" + str(index).zfill(2) + ".png")))
@@ -134,6 +141,17 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # Enable the characters portraits
         for i in range(0,62):
             miniPortraitsImage[i].setEnabled(True)
+
+        # Show the large portrait
+        self.portrait.setVisible(True)
+
+        # Show the transform panel
+        transformations = characterList[0].transformations
+        self.trans0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
+        self.trans1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
+        self.trans2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
+        self.transPanel.setVisible(True)
+
 
 
     def closeEvent(self, event):
