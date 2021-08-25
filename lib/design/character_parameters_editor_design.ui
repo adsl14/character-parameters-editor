@@ -1326,25 +1326,6 @@
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QLabel" name="label_trans_4">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>0</y>
-           <width>41</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
-         </property>
-         <property name="scaledContents">
-          <bool>true</bool>
-         </property>
-        </widget>
        </widget>
        <widget class="QFrame" name="panel2">
         <property name="geometry">
