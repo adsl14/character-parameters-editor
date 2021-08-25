@@ -1,6 +1,6 @@
 import os, stat, functools
 
-from shutil import rmtree
+from shutil import rmtree, copyfile
 from datetime import datetime
 from lib.design.character_parameters_editor_design import *
 from lib.design.select_chara import Ui_Dialog
@@ -10,6 +10,9 @@ from lib.classes.Character import Character
 
 # Temp folder name
 temp_folder = "temp_" + datetime.now().strftime("_%d-%m-%Y_%H-%M-%S")
+# Path files
+pak_file_path_original = ""
+pak_file_path = ""
 
 # resources path
 dbrb_compressor_path = os.path.join("lib", "resources", "dbrb_compressor.exe")
@@ -35,7 +38,10 @@ miniPortraitsImageSelectCharaWindow = []
 
 # List of character with their data from the file
 characterList = []
-charaSelected = 0
+charaSelected = 0 # Index of the char selected in the program
+transSlotPanelSelected = 0 # Slot thas is being edited
+# Array of the characters that was being edited
+characterListEdited = []
 
  # Store what character has original transform version
 charactersWithTrans = [0, 5, 8, 17, 22, 24, 27, 29, 31, 34, 40, 48, 58, 63, 67, 79, 82, 85, 88]
@@ -60,7 +66,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # File tab
         self.actionOpen.triggered.connect(self.action_open_logic)
-        #self.actionSave.triggered.connect(self.action_save_logic)
+        self.actionSave.triggered.connect(self.action_save_logic)
         self.actionClose.triggered.connect(self.close)
 
         # About tab
@@ -82,7 +88,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         	miniPortraitsImage[i].setVisible(False)
 
         # Set the the main image
-        self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_000.png")))
         self.portrait.setVisible(False)
 
         # Set the transform panel invisible
@@ -96,13 +101,46 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         miniPortraitsImageSelectCharaWindow = self.selectCharaUI.frame.findChildren(QLabel)
         for i in range(0,100):
             miniPortraitsImageSelectCharaWindow[i].setPixmap(QPixmap(os.path.join(path_little_images, "sc_chara_0" + str(i).zfill(2) + ".bmp")))
+            miniPortraitsImageSelectCharaWindow[i].mousePressEvent = functools.partial(self.action_edit_transformation, charSelectedNew = i)
+
+    def action_edit_transformation(self, event, charSelectedNew):
+
+        global charaSelected, transSlotPanelSelected
+
+        # If the selected character in the window is the same as in the panel transformations, we assume there won't be any transformation in that slot
+        # so it will be 100
+        if characterList[charaSelected].transformations[transSlotPanelSelected] ==  charSelectedNew:
+            charSelectedNew = 100
+
+        # Change the transformation in our array of characters
+        characterList[charaSelected].transformations[transSlotPanelSelected] = charSelectedNew
+
+        # Change the visual transformation
+        if transSlotPanelSelected == 0:
+            self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(charSelectedNew).zfill(2) + ".png")))
+            self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=charSelectedNew, transSlotPanelIndex=0)
+        elif transSlotPanelSelected == 1:
+            self.transSlotPanel1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(charSelectedNew).zfill(2) + ".png")))
+            self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=charSelectedNew, transSlotPanelIndex=1)
+        elif transSlotPanelSelected == 2:
+            self.transSlotPanel2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(charSelectedNew).zfill(2) + ".png")))
+            self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=charSelectedNew, transSlotPanelIndex=2)
+        elif transSlotPanelSelected == 3:
+            self.transSlotPanel3.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(charSelectedNew).zfill(2) + ".png")))
+            self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=charSelectedNew, transSlotPanelIndex=3)
+
+        # If the character was edited before, we won't append the index to our array of characters edited once
+        if characterList[charaSelected] not in characterListEdited:
+            characterListEdited.append(characterList[charaSelected])
+
+        self.selectCharaWindow.close()
 
 
     def action_change_character(self, event, index=None, modifySlotTransform=False):
 
         global charaSelected
 
-        # Change only the char selected is other
+        # Change only if the char selected is other
         if charaSelected != index:
 
             # Load the portrait
@@ -113,32 +151,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             # Change panel transformations and their interactions
             if transformations[0] != 100:
                 self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
-                self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[0])
+                self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[0], transSlotPanelIndex=0)
                 self.transSlotPanel0.setVisible(True)
             else:
                 self.transSlotPanel0.setPixmap(QPixmap())
-                self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=100)
+                self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=100, transSlotPanelIndex=0)
             if transformations[1] != 100:
                 self.transSlotPanel1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
-                self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[1])
+                self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[1], transSlotPanelIndex=1)
                 self.transSlotPanel1.setVisible(True)
             else:
                 self.transSlotPanel1.setPixmap(QPixmap())
-                self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=100)
+                self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=100, transSlotPanelIndex=1)
             if transformations[2] != 100:
                 self.transSlotPanel2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
-                self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[2])
+                self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[2], transSlotPanelIndex=2)
                 self.transSlotPanel2.setVisible(True)
             else:
                 self.transSlotPanel2.setPixmap(QPixmap())
-                self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=100)
+                self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=100, transSlotPanelIndex=2)
             if transformations[3] != 100:
                 self.transSlotPanel3.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[3]).zfill(2) + ".png")))
-                self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[3])
+                self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[3], transSlotPanelIndex=3)
                 self.transSlotPanel3.setVisible(True)
             else:
                 self.transSlotPanel3.setPixmap(QPixmap())
-                self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=100)                                           
+                self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=100, transSlotPanelIndex=3)                                           
 
             # Modify the slots of the transformations in the main panel
             if modifySlotTransform:
@@ -178,7 +216,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def action_open_logic(self):
 
-        global temp_folder, miniPortraitsImage, characterList
+        global temp_folder, miniPortraitsImage, characterList, pak_file_path_original, pak_file_path
 
 		# Open pak file
         pak_file_path_original = \
@@ -240,6 +278,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             miniPortraitsImage[i].setEnabled(True)
 
         # Show the large portrait
+        self.portrait.setPixmap(QPixmap(os.path.join(path_large_images, "chara_up_chips_l_000.png")))
         self.portrait.setVisible(True)
 
         # Show the transformations in the main panel
@@ -255,20 +294,28 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_trans_2.setVisible(True)
 
         # Show the transform panel
+        self.transText.setPixmap(QPixmap(os.path.join(path_fourSlot_images, "tx_transform_US.png")))
         self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[0]).zfill(2) + ".png")))
-        self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[0])
+        self.transSlotPanel0.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[0], transSlotPanelIndex=0)
         self.transSlotPanel1.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[1]).zfill(2) + ".png")))
-        self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[1])
+        self.transSlotPanel1.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[1], transSlotPanelIndex=1)
         self.transSlotPanel2.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[2]).zfill(2) + ".png")))
-        self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[2])
+        self.transSlotPanel2.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[2], transSlotPanelIndex=2)
         self.transSlotPanel3.setPixmap(QPixmap(os.path.join(path_little2_images, "sc_chara_s_0" + str(transformations[3]).zfill(2) + ".png")))
-        self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[3])
+        self.transSlotPanel3.mousePressEvent = functools.partial(self.open_select_chara_window, index=transformations[3], transSlotPanelIndex=3)
         self.transPanel.setVisible(True)
 
+        # Clean the array of edited characters
+        characterListEdited.clear()
 
-    def open_select_chara_window(self, event, index):
 
-        global charaSelectedCharacterWindow
+    def open_select_chara_window(self, event, index, transSlotPanelIndex):
+
+        global charaSelectedCharacterWindow, transSlotPanelSelected
+
+        # Store in a global var what slot in the transformation panel has been selected
+        transSlotPanelSelected = transSlotPanelIndex
+
         # Avoid adding the red border to the character transform selected
         if charaSelectedCharacterWindow != index:
             # If the index is 100 (means there's no character transformation), we will remove the red border for the previous character transform panel
@@ -281,6 +328,60 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 
             charaSelectedCharacterWindow = index
         self.selectCharaWindow.show()
+
+
+    def action_save_logic(self):
+
+        global characterListEdited, pak_file_path, pak_file_path_original
+
+        # If the user has edited one character, we will save
+        if characterListEdited:
+
+            # Create the output name
+            basename = os.path.basename(pak_file_path_original).replace(".pak", datetime.now().strftime("_%d-%m-%Y_%H-%M-%S"))
+
+            # Ask to the user where to save the file
+            path_output_file = QFileDialog.getSaveFileName(self, "Save file", os.path.abspath(os.path.join(os.getcwd(),basename)), "PAK files (*.pak)")[0]
+
+            if path_output_file:
+
+                pak_export_path = pak_file_path.replace(".pak", "_m.pak")
+                copyfile(pak_file_path, pak_export_path)
+
+                # We open the file decrypted
+                with open(pak_export_path, mode="rb+") as file:
+
+                    # Change the transformations in the file
+                    for character in characterListEdited:
+                        file.seek(character.positionTrans)
+                        for transformation in character.transformations:
+                            file.write(transformation.to_bytes(1, byteorder="big"))
+
+                # Generate the final file for the game
+                args = os.path.join(dbrb_compressor_path) + " \"" + pak_export_path + "\" \"" \
+                    + path_output_file + "\""
+                os.system('cmd /c ' + args)
+
+                # Remove the uncompressed modified file
+                os.remove(pak_export_path)
+
+                msg = QMessageBox()
+                msg.setWindowTitle("Message")
+                message = "The file were saved and compressed in: <b>" + path_output_file \
+                          + "</b><br><br> Do you wish to open the folder?"
+                message_open_saved_files = msg.question(self, '', message, msg.Yes | msg.No)
+
+                # If the users click on 'Yes', it will open the path where the files were saved
+                if message_open_saved_files == msg.Yes:
+                    # Show the path folder to the user
+                    os.system('explorer.exe ' + os.path.dirname(path_output_file).replace("/","\\"))
+
+        else:
+            msg = QMessageBox()
+            msg.setWindowTitle("Warning")
+            msg.setText("The file hasn't been modified.")
+            msg.exec()
+
 
     def closeEvent(self, event):
         if os.path.exists(temp_folder):
