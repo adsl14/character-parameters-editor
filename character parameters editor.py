@@ -338,17 +338,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.portrait.setVisible(True)
 
         # Show the transformations in the main panel
-        transformations = character_list[0].transformations
-        self.label_trans_0.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_0" +
-                                                          str(transformations[0]).zfill(2) + ".bmp")))
+        self.label_trans_0.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_001.bmp")))
         self.label_trans_0.mousePressEvent = functools.partial(self.action_change_character,
                                                                index=transformations[0], modify_slot_transform=False)
-        self.label_trans_1.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_0" +
-                                                          str(transformations[1]).zfill(2) + ".bmp")))
+        self.label_trans_1.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_002.bmp")))
         self.label_trans_1.mousePressEvent = functools.partial(self.action_change_character,
                                                                index=transformations[1], modify_slot_transform=False)
-        self.label_trans_2.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_0" +
-                                                          str(transformations[2]).zfill(2) + ".bmp")))
+        self.label_trans_2.setPixmap(QPixmap(os.path.join(path_small_images, "sc_chara_003.bmp")))
         self.label_trans_2.mousePressEvent = functools.partial(self.action_change_character,
                                                                index=transformations[2], modify_slot_transform=False)
         self.label_trans_0.setVisible(True)
@@ -356,6 +352,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.label_trans_2.setVisible(True)
 
         # Show the transform panel
+        transformations = character_list[0].transformations
         self.transText.setPixmap(QPixmap(os.path.join(path_fourSlot_images, "tx_transform_US.png")))
         self.transSlotPanel0.setPixmap(QPixmap(os.path.join(path_small_four_slot_images, "sc_chara_s_0" +
                                                             str(transformations[0]).zfill(2) + ".png")))
