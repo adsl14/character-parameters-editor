@@ -25,7 +25,7 @@ Select the character you want by clicking in his/her image in the panel.
 <img src="images/chara_selected.jpg" alt="chara selected image" width="50%">
 
 
-Next, select in the transformation panel the slot you want to edit. It will pop up a new Window with all the character you can swap to.
+Next, select in the transformation panel the slot you want to edit. It will pop up a new window with all the character you can swap to.
 
 <img src="images/select_chara_window.jpg" alt="select chara window image" width="40%">
 
