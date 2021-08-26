@@ -1,12 +1,12 @@
 # character_parameters_editor
 
-<img src="images/main_image.jpg" alt="main  image" width="70%">
+<img src="images/main_image.jpg" alt="main image" width="70%">
 
 This tool will help you in the edition of the parameters for the characters like transformations, lightning, glow, etc. The first version will only have transformations, so in the future new features will be added as soon things get discovered.
 
 Credits to the Raging Blast Modding community and specially to revelation from [XeNTaX](https://forum.xentax.com) forum who made the compress/uncompress tool.
 
-You can get access to the Raging Blast Modding community in the [Discord](https://discord.gg/tBmcwkGUE6) server
+You can get access to the Raging Blast Modding community in the [Discord](https://discord.gg/tBmcwkGUE6) server.
 
 ## How to
 
@@ -15,7 +15,7 @@ When the tool is opened the first time, it will show a disabled panel with all t
 <img src="images/panel_disabled.jpg" alt="panel disabled image" width="50%">
 
 
-To enable it, you need to open the file operate_resident_param.pak from the st_pack_battle_others_pt_ps3 afs. Doing that, the main panel will be enabled, a portrait of the character selected will be show, and the transformation panel too.
+To enable it, you need to open the file _operate_resident_param.pak_ from the _st_pack_battle_others_pt_ps3_ afs file. Doing that, the main panel will be enabled, a portrait of the character selected will be show, and the transformation panel too.
 
 <img src="images/main_image.jpg" alt="main image" width="50%">
 
