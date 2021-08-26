@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>character parameters editor</string>
+   <string>character parameters editor 1.0</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -82,7 +82,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_067.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -104,7 +104,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_072.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -123,7 +123,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_071.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -142,7 +142,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_078.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -161,7 +161,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_093.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -180,7 +180,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_077.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -199,7 +199,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_066.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -218,7 +218,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_063.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -237,7 +237,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_062.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -256,7 +256,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_085.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -275,7 +275,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_076.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -294,7 +294,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_058.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -313,7 +313,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_084.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -332,7 +332,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_016.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -351,7 +351,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_074.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -370,7 +370,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_039.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -389,7 +389,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_038.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -408,7 +408,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_070.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -427,7 +427,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_021.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -446,7 +446,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_090.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -465,7 +465,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_092.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -484,7 +484,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_029.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -503,7 +503,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_036.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -522,7 +522,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_031.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -541,7 +541,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_027.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -560,7 +560,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_004.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -579,7 +579,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_073.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -598,7 +598,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_008.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -617,7 +617,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_005.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -636,7 +636,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_000.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -655,7 +655,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_024.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -674,7 +674,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_013.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -693,7 +693,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_012.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -712,7 +712,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_017.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -731,7 +731,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_015.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -750,7 +750,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_014.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -769,7 +769,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_011.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -788,7 +788,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_037.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -807,7 +807,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_034.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -826,7 +826,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_088.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -845,7 +845,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_022.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -864,7 +864,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_048.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -883,7 +883,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_081.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -902,7 +902,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_079.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -921,7 +921,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_075.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -940,7 +940,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_043.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -959,7 +959,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_046.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -978,7 +978,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_045.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -997,7 +997,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_044.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1016,7 +1016,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_047.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1035,7 +1035,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_098.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1054,7 +1054,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_097.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1073,7 +1073,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_096.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1092,7 +1092,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_091.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1111,7 +1111,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_087.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1130,7 +1130,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_042.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1149,7 +1149,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_040.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1168,7 +1168,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_054.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1187,7 +1187,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_057.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1206,7 +1206,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_056.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1225,7 +1225,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_055.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1244,7 +1244,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_000.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1263,7 +1263,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_001.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1282,7 +1282,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_001.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1301,7 +1301,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_001.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1320,7 +1320,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little/sc_chara_099.bmp</pixmap>
+          <pixmap>../images/small/sc_chara_001.bmp</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1330,8 +1330,8 @@
        <widget class="QFrame" name="panel2">
         <property name="geometry">
          <rect>
-          <x>480</x>
-          <y>80</y>
+          <x>460</x>
+          <y>90</y>
           <width>191</width>
           <height>221</height>
          </rect>
@@ -1377,7 +1377,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little2/sc_chara_s_000.png</pixmap>
+          <pixmap>../images/fourSlot/small/sc_chara_s_000.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1396,7 +1396,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little2/sc_chara_s_000.png</pixmap>
+          <pixmap>../images/fourSlot/small/sc_chara_s_000.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1415,7 +1415,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little2/sc_chara_s_000.png</pixmap>
+          <pixmap>../images/fourSlot/small/sc_chara_s_000.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -1434,7 +1434,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>../images/little2/sc_chara_s_000.png</pixmap>
+          <pixmap>../images/fourSlot/small/sc_chara_s_000.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
