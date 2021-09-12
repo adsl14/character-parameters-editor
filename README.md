@@ -1,3 +1,5 @@
+# DEPRECATED! This tool was moved to this new repository: [Raging tools](https://github.com/adsl14/Raging-tools)
+
 # character_parameters_editor
 
 <img src="images/main_image.jpg" alt="main image" width="70%">
